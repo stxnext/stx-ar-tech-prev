@@ -1,4 +1,4 @@
-package com.stx.ar.util;
+package com.stxnext.ar.util;
 
 import android.graphics.Color;
 

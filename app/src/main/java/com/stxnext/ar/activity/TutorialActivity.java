@@ -1,4 +1,4 @@
-package com.stx.ar.activity;
+package com.stxnext.ar.activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.stx.ar.R;
-import com.stx.ar.adapter.CustomPageTransformer;
-import com.stx.ar.adapter.ViewPagerAdapter;
-import com.stx.ar.util.ColorShades;
-import com.stx.ar.view.CirclePageIndicator;
+import com.stxnext.ar.R;
+import com.stxnext.ar.adapter.CustomPageTransformer;
+import com.stxnext.ar.adapter.ViewPagerAdapter;
+import com.stxnext.ar.util.ColorShades;
+import com.stxnext.ar.view.CirclePageIndicator;
 
 /**
  * Created by Łukasz Ciupa on 21.01.2016.

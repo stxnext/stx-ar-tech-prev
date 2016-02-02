@@ -1,4 +1,4 @@
-package com.stx.ar.view;
+package com.stxnext.ar.view;
 
 /*
  * Copyright (C) 2011 Patrik Akerfeldt
@@ -33,7 +33,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import com.stx.ar.R;
+import com.stxnext.ar.R;
 
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 import static android.widget.LinearLayout.HORIZONTAL;

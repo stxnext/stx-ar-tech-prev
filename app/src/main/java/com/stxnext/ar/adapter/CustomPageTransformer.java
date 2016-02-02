@@ -1,10 +1,10 @@
-package com.stx.ar.adapter;
+package com.stxnext.ar.adapter;
 
 import android.os.Build;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
-import com.stx.ar.R;
+import com.stxnext.ar.R;
 
 /**
  * Created by Łukasz Ciupa on 22.01.2016.

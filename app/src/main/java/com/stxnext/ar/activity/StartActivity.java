@@ -1,4 +1,4 @@
-package com.stx.ar.activity;
+package com.stxnext.ar.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,8 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.stx.ar.R;
-import com.stx.ar.util.Preferences;
+import com.stxnext.ar.R;
+import com.stxnext.ar.util.Preferences;
 
 /**
  * Created by Łukasz Ciupa on 19.01.2016.

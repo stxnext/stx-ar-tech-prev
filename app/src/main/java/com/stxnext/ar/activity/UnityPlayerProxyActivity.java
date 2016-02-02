@@ -1,4 +1,4 @@
-package com.stx.ar.activity;
+package com.stxnext.ar.activity;
 
 import android.app.Activity;
 import android.content.Intent;

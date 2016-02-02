@@ -1,4 +1,4 @@
-package com.stx.ar.adapter;
+package com.stxnext.ar.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -13,9 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.stx.ar.R;
-import com.stx.ar.activity.TutorialActivity;
-import com.stx.ar.util.Preferences;
+import com.stxnext.ar.R;
+import com.stxnext.ar.activity.TutorialActivity;
 
 /**
  * Created by Łukasz Ciupa on 22.01.2016.

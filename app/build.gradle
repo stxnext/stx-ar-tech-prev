@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.stx.ar"
+        applicationId "com.stxnext.ar"
         minSdkVersion 14
         targetSdkVersion 23
     }
