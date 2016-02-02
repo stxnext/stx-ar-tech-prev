@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="landing_bg">
+        <item>@color/light_green</item>
+        <item>@color/light_purple</item>
+        <item>@color/light_orange</item>
+        <item>@color/light_cyan</item>
+
+    </array>
+
+    <array name="icons">
+        <item>@drawable/ar</item>
+        <item>@drawable/ar_marker</item>
+        <item>@drawable/howto</item>
+        <item>@drawable/letsstart</item>
+
+    </array>
+
+    <string-array name="titles" >
+
+        <item>@string/welcome</item>
+        <item>@string/marker</item>
+        <item>@string/usage</item>
+        <item>@string/finish</item>
+
+    </string-array>
+
+    <string-array name="hints" >
+
+        <item>@string/start_hint</item>
+        <item>@string/marker_hint</item>
+        <item>@string/usage_hint</item>
+        <item>@string/finish_hint</item>
+
+    </string-array>
+</resources>
