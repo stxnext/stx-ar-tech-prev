@@ -3,12 +3,14 @@
               android:layout_width="280dp"
               android:layout_height="match_parent"
               android:layout_gravity="start"
+              android:background="@drawable/stx_colors_gradient"
               android:orientation="vertical"
               android:clickable="true">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/underlined_stx_dark">
 
         <ImageView
             android:layout_width="match_parent"
@@ -23,6 +25,7 @@
         android:id="@+id/left_drawer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:choiceMode="singleChoice"/>
+        android:choiceMode="singleChoice"
+        android:listSelector="@drawable/drawer_list_selector"/>
 
 </LinearLayout>
