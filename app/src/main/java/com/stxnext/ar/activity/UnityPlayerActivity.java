@@ -2,6 +2,7 @@ package com.stxnext.ar.activity;
 
 import com.stxnext.ar.R;
 import com.stxnext.ar.adapter.DrawerAdapter;
+import com.stxnext.ar.model.DrawerMenuItems;
 import com.unity3d.player.*;
 import android.app.Activity;
 import android.content.res.Configuration;
@@ -87,15 +88,30 @@ public class UnityPlayerActivity extends AppCompatActivity {
 	private void configureDrawer() {
 		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		ListView drawerList = (ListView) findViewById(R.id.left_drawer);
-
-		drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				drawerLayout.closeDrawers();
-			}
-		});
         final DrawerAdapter drawerAdapter = new DrawerAdapter(this);
         drawerList.setAdapter(drawerAdapter);
+		drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                DrawerMenuItems menuItem = drawerAdapter.getItem(position);
+                switch(menuItem) {
+                    case STX_LOGO:
+                        Log.d(this.getClass().getName(), "activateLogo request");
+                        mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateLogo", "");
+                        break;
+                    case DINOSAUR:
+                        Log.d(this.getClass().getName(), "activateDinosaur request");
+                        mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateDinosaur", "");
+                        break;
+                    case CAT:
+                        Log.d(this.getClass().getName(), "activateCat request");
+                        mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateCat", "");
+                        break;
+                }
+
+                drawerLayout.closeDrawers();
+            }
+        });
 		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
 		drawerLayout.setDrawerListener(drawerToggle);
 
