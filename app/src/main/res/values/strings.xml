@@ -10,6 +10,8 @@
     <string name="dinosaur">Dinosaur</string>
     <string name="cat">Cat</string>
     <string name="tutorial">Tutorial</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 
     <string name="welcome">WELCOME</string>
     <string name="marker">AR MARKER</string>

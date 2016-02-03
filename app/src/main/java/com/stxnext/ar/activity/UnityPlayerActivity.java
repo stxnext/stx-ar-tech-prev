@@ -6,19 +6,31 @@ import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ListView;
 
-public class UnityPlayerActivity extends Activity {
+public class UnityPlayerActivity extends AppCompatActivity {
 
 	protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
 	private Button backButton;
 	private FrameLayout unityContainer;
+	private Toolbar toolbar;
+	private DrawerLayout drawerLayout;
+	private ActionBarDrawerToggle drawerToggle;
 
     public static final String AR_OBJECT_INTENT_TAG = "arObjectTag";
     public static final int LOGO_REQUEST = 1;
@@ -38,6 +50,12 @@ public class UnityPlayerActivity extends Activity {
 
 		mUnityPlayer = new UnityPlayer(this);
 		setContentView(R.layout.activity_unity_player);
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setTitleTextColor(ContextCompat.getColor(this, android.R.color.white));
+		setSupportActionBar(toolbar);
+		getSupportActionBar().setTitle("ksflkf");
+
+        configureDrawer();
 		backButton = (Button) findViewById(R.id.back_button);
 		unityContainer = (FrameLayout) findViewById(R.id.unity_container);
 		FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
@@ -63,6 +81,32 @@ public class UnityPlayerActivity extends Activity {
 				mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateCat", "");
 				break;
 		}
+	}
+
+	private void configureDrawer() {
+		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		ListView drawerList = (ListView) findViewById(R.id.left_drawer);
+		drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				drawerLayout.closeDrawers();
+			}
+		});
+
+		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+		drawerLayout.setDrawerListener(drawerToggle);
+
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return drawerToggle.onOptionsItemSelected(item);
+	}
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+		drawerToggle.syncState();
 	}
 
 	// Quit Unity
@@ -109,7 +153,17 @@ public class UnityPlayerActivity extends Activity {
 		return super.dispatchKeyEvent(event);
 	}
 
-    /**
+	@Override
+	public void onBackPressed() {
+
+		if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+			drawerLayout.closeDrawers();
+		} else {
+            super.onBackPressed();
+        }
+	}
+
+	/**
      * Called from Unity script (when user clicks device's back button).
      */
     public void onUnityBackPressed() {
@@ -117,7 +171,7 @@ public class UnityPlayerActivity extends Activity {
             @Override
             public void run() {
                 Log.d(this.getClass().getName(), "onUnityBackPressed");
-                UnityPlayerActivity.super.onBackPressed();
+                UnityPlayerActivity.this.onBackPressed();
             }
         });
     }

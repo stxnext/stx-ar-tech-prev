@@ -1,8 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ToolbarTheme" parent="AppTheme">
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">@color/white_little_greyed</item>
+    </style>
+
+    <!-- It's a style for hamburger icon -->
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/white_little_greyed</item>
+    </style>
+
 
 </resources>

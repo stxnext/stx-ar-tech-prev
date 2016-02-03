@@ -1,28 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical">
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-        <FrameLayout
-            android:id="@+id/unity_container"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/back_button"
+            <FrameLayout
+                android:id="@+id/unity_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/selector_grey_button"
+                android:text="@string/back"
+                android:textColor="@android:color/black"
+                android:textStyle="bold">
+            </Button>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.Toolbar
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@drawable/selector_grey_button"
-            android:text="@string/back"
-            android:textColor="@android:color/black"
-            android:textStyle="bold">
-        </Button>
+            android:layout_height="?android:attr/actionBarSize"
+            app:theme="@style/ToolbarTheme"/>
 
-    </LinearLayout>
+    </FrameLayout>
 
+    <include layout="@layout/drawer_layout"/>
 
+</android.support.v4.widget.DrawerLayout>
