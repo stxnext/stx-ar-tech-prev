@@ -51,9 +51,10 @@ public class UnityPlayerActivity extends AppCompatActivity {
 		mUnityPlayer = new UnityPlayer(this);
 		setContentView(R.layout.activity_unity_player);
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Now it is set in style for toolbar.
 //        toolbar.setTitleTextColor(ContextCompat.getColor(this, android.R.color.white));
 		setSupportActionBar(toolbar);
-		getSupportActionBar().setTitle("ksflkf");
+		getSupportActionBar().setTitle(R.string.app_name);
 
         configureDrawer();
 		backButton = (Button) findViewById(R.id.back_button);
