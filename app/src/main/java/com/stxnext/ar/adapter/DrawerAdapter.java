@@ -10,10 +10,6 @@ import android.widget.TextView;
 import com.stxnext.ar.R;
 import com.stxnext.ar.model.DrawerMenuItems;
 
-
-/**
- * Created by Tomasz Konieczny on 2015-05-12.
- */
 public class DrawerAdapter extends ArrayAdapter<DrawerMenuItems> {
 
     public DrawerAdapter(Context context) {

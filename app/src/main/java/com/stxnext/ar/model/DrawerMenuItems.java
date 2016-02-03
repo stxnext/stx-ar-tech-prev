@@ -3,9 +3,6 @@ package com.stxnext.ar.model;
 
 import com.stxnext.ar.R;
 
-/**
- * Created by Tomasz Konieczny on 2015-05-12.
- */
 public enum DrawerMenuItems {
 
     STX_LOGO(R.string.stx_logo),

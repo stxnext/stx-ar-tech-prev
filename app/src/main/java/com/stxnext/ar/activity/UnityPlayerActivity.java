@@ -1,6 +1,7 @@
 package com.stxnext.ar.activity;
 
 import com.stxnext.ar.R;
+import com.stxnext.ar.adapter.DrawerAdapter;
 import com.unity3d.player.*;
 import android.app.Activity;
 import android.content.res.Configuration;
@@ -55,7 +56,6 @@ public class UnityPlayerActivity extends AppCompatActivity {
 //        toolbar.setTitleTextColor(ContextCompat.getColor(this, android.R.color.white));
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setTitle(R.string.app_name);
-
         configureDrawer();
 		backButton = (Button) findViewById(R.id.back_button);
 		unityContainer = (FrameLayout) findViewById(R.id.unity_container);
@@ -87,13 +87,15 @@ public class UnityPlayerActivity extends AppCompatActivity {
 	private void configureDrawer() {
 		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		ListView drawerList = (ListView) findViewById(R.id.left_drawer);
+
 		drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				drawerLayout.closeDrawers();
 			}
 		});
-
+        final DrawerAdapter drawerAdapter = new DrawerAdapter(this);
+        drawerList.setAdapter(drawerAdapter);
 		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
 		drawerLayout.setDrawerListener(drawerToggle);
 
