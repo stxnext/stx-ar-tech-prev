@@ -3,8 +3,10 @@ package com.stxnext.ar.activity;
 import com.stxnext.ar.R;
 import com.stxnext.ar.adapter.DrawerAdapter;
 import com.stxnext.ar.model.DrawerMenuItems;
+import com.stxnext.ar.util.Preferences;
 import com.unity3d.player.*;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -58,19 +60,18 @@ public class UnityPlayerActivity extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setTitle(R.string.app_name);
         configureDrawer();
-		backButton = (Button) findViewById(R.id.back_button);
 		unityContainer = (FrameLayout) findViewById(R.id.unity_container);
 		FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
 		unityContainer.addView(mUnityPlayer.getView(), 0, layoutParams);
-
 		mUnityPlayer.requestFocus();
-		backButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				onBackPressed();
-//                finish();
-			}
-		});
+		backButton = (Button) findViewById(R.id.back_button);
+//		backButton.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				onBackPressed();
+////                finish();
+//			}
+//		});
 		int request = getIntent().getIntExtra(AR_OBJECT_INTENT_TAG, LOGO_REQUEST);
 		switch (request) {
 			case LOGO_REQUEST:
@@ -96,26 +97,68 @@ public class UnityPlayerActivity extends AppCompatActivity {
                 DrawerMenuItems menuItem = drawerAdapter.getItem(position);
                 switch(menuItem) {
                     case STX_LOGO:
-                        Log.d(this.getClass().getName(), "activateLogo request");
+                        Log.d(UnityPlayerActivity.this.getClass().getName(), "activateLogo request");
                         mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateLogo", "");
                         break;
                     case DINOSAUR:
-                        Log.d(this.getClass().getName(), "activateDinosaur request");
+                        Log.d(UnityPlayerActivity.this.getClass().getName(), "activateDinosaur request");
                         mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateDinosaur", "");
                         break;
                     case CAT:
-                        Log.d(this.getClass().getName(), "activateCat request");
+                        Log.d(UnityPlayerActivity.this.getClass().getName(), "activateCat request");
                         mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateCat", "");
                         break;
+                    case TUTORIAL:
+                        Log.d(UnityPlayerActivity.this.getClass().getName(), "Run Tutorial");
+                        runTutorial();
+                        break;
+                    case CLOSE:
+                        Log.d(UnityPlayerActivity.this.getClass().getName(), "Close application.");
+                        finish();
                 }
 
                 drawerLayout.closeDrawers();
             }
         });
-		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                toolbar.animate().alpha(1).setDuration(150);
+//                getSupportActionBar().setTitle(R.string.app_name);
+//                drawerToggle.setDrawerIndicatorEnabled(true);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                toolbar.animate().alpha(0).setDuration(150);
+//                getSupportActionBar().setTitle("");
+//                drawerToggle.setDrawerIndicatorEnabled(false);
+            }
+        };
 		drawerLayout.setDrawerListener(drawerToggle);
 
 	}
+
+    private void runTutorial() {
+        Intent tutorialIntent = new Intent(this, TutorialActivity.class);
+        startActivityForResult(tutorialIntent, StartActivity.TUTORIAL_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode) {
+            case StartActivity.TUTORIAL_REQUEST:
+                if (resultCode == TutorialActivity.RESULT_OK) {
+                    Preferences.getInstance(this).setTutorialDone(true);
+                }
+                break;
+            default:
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

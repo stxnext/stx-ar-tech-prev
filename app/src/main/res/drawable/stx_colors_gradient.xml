@@ -3,7 +3,7 @@
 
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/stxnext_green_dark"/>
+            <solid android:color="@color/stxnext_green_dark_translucent"/>
         </shape>
     </item>
 
@@ -11,9 +11,9 @@
         <shape android:shape="rectangle">
             <gradient
                 android:angle="315"
-                android:endColor="@color/stxnext_green"
-                android:centerColor="@color/stxnext_green_dark"
-                android:startColor="@color/stxnext_green_dark"/>
+                android:endColor="@color/stxnext_green_translucent"
+                android:centerColor="@color/stxnext_green_dark_translucent"
+                android:startColor="@color/stxnext_green_dark_translucent"/>
         </shape>
     </item>
 

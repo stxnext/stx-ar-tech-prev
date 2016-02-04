@@ -15,7 +15,7 @@ import com.stxnext.ar.util.Preferences;
  */
 public class StartActivity extends Activity {
 
-    private static final int TUTORIAL_REQUEST = 1;
+    public static final int TUTORIAL_REQUEST = 1;
 
     Button buttonLogo;
     Button buttonDinosaur;
@@ -79,6 +79,7 @@ public class StartActivity extends Activity {
 
         if(Preferences.getInstance(this).isTutorialDone()) {
             Log.d(this.getClass().getName(), "Tutorial is done");
+            startUnityPlayer();
         } else {
             Log.d(this.getClass().getName(), "Tutorial is not done");
             runTutorial();
@@ -98,12 +99,16 @@ public class StartActivity extends Activity {
                 if (resultCode == TutorialActivity.RESULT_OK) {
                     Preferences.getInstance(this).setTutorialDone(true);
                 }
-//                startActivity(new Intent(StartActivity.this, UnityPlayerActivity.class));
-//                finish();
+                startUnityPlayer();
                 break;
             default:
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void startUnityPlayer() {
+        startActivity(new Intent(StartActivity.this, UnityPlayerActivity.class));
+        finish();
     }
 }

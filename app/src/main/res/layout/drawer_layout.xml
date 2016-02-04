@@ -9,8 +9,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/underlined_stx_dark">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="match_parent"
@@ -20,6 +19,11 @@
             android:src="@drawable/stx_logo_white"/>
 
     </FrameLayout>
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@color/stxnext_green_darkest_translucent" />-->
 
     <ListView
         android:id="@+id/left_drawer"

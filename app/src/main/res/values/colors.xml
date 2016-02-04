@@ -27,9 +27,12 @@
     <color name="stxnext_green_selected">#2d49fff9</color>
     <color name="stxnext_green_light">#0f49fff9</color>
     <color name="stxnext_green">#2e9f99</color>
+    <color name="stxnext_green_translucent">#5c2e9f99</color>
     <color name="stxnext_green_lighter">#36a9a3</color>
     <color name="stxnext_green_dark">#ff195b55</color>
+    <color name="stxnext_green_dark_translucent">#5e195b55</color>
     <color name="stxnext_green_darkest">#ff184640</color>
+    <color name="stxnext_green_darkest_translucent">#5c184640</color>
     <color name="stxnext_cardview_white">#ffFAFAFA</color>
     <color name="gray_dark">#ff7e7e7e</color>
     <color name="text_dark">#ff333333</color>
