@@ -64,14 +64,6 @@ public class UnityPlayerActivity extends AppCompatActivity {
 		FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
 		unityContainer.addView(mUnityPlayer.getView(), 0, layoutParams);
 		mUnityPlayer.requestFocus();
-		backButton = (Button) findViewById(R.id.back_button);
-//		backButton.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				onBackPressed();
-////                finish();
-//			}
-//		});
 		int request = getIntent().getIntExtra(AR_OBJECT_INTENT_TAG, LOGO_REQUEST);
 		switch (request) {
 			case LOGO_REQUEST:

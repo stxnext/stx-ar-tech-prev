@@ -22,21 +22,19 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
 
-            <Button
-                android:id="@+id/back_button"
+            <!--This needs to be here because of glitch in graphics rendering when drawer is open.
+                It's because surfaceview on which unity renders its player uses graphics hardware in
+                a direct way, without cooperation with rest of android components.-->
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/selector_grey_button"
-                android:text="@string/back"
-                android:textColor="@android:color/black"
-                android:textStyle="bold">
-            </Button>
+                android:layout_height="1px"
+                android:background="@android:color/black"/>
 
         </LinearLayout>
 
         <android.support.v7.widget.Toolbar
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/toolbar"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             app:theme="@style/ToolbarTheme"/>
