@@ -24,6 +24,7 @@ public class DrawerAdapter extends ArrayAdapter<DrawerMenuItems> {
 
         TextView label = (TextView) convertView.findViewById(R.id.drawer_label);
         label.setText(getItem(position).getTitle());
+        label.setAllCaps(true);
 
         return convertView;
     }
