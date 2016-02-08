@@ -104,6 +104,10 @@ public class UnityPlayerActivity extends AppCompatActivity {
                         Log.d(UnityPlayerActivity.this.getClass().getName(), "Run Tutorial");
                         runTutorial();
                         break;
+					case CREDITS:
+						Log.d(UnityPlayerActivity.this.getClass().getName(), "Run Credits");
+						runCredits();
+						break;
                     case CLOSE:
                         Log.d(UnityPlayerActivity.this.getClass().getName(), "Close application.");
                         finish();
@@ -137,6 +141,11 @@ public class UnityPlayerActivity extends AppCompatActivity {
         Intent tutorialIntent = new Intent(this, TutorialActivity.class);
         startActivityForResult(tutorialIntent, StartActivity.TUTORIAL_REQUEST);
     }
+
+	private void runCredits() {
+		Intent creditsIntent = new Intent(this, CreditsActivity.class);
+		startActivity(creditsIntent);
+	}
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

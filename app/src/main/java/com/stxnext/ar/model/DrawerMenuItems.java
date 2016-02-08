@@ -9,6 +9,7 @@ public enum DrawerMenuItems {
     DINOSAUR(R.string.dinosaur),
     CAT(R.string.cat),
     TUTORIAL(R.string.tutorial),
+    CREDITS(R.string.credits),
     CLOSE(R.string.close);
 
     private final int title;
