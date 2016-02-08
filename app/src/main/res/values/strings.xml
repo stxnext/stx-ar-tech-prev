@@ -19,10 +19,10 @@
     <string name="finish">LET\'S START</string>
 
 
-    <string name="start_hint">Welcome to STX AR Application. This tutorial will guide you through the process of setting up an application.</string>
+    <string name="start_hint">Welcome to STX Augmented Reality Application. This tutorial will guide you through the process of setting up the application.</string>
     <string name="marker_hint">Please visit a page &lt;a href=\"https://nofluffjobs.com/upload/STX_Next_20150129_164933.png\">http://stxnext.pl/ar/logo&lt;/a> and print STX LOGO.</string>
     <string name="usage_hint">To display AR object point your phone\'s camera at STX Logo.</string>
-    <string name="finish_hint">Now it is finished. Please press start button to run STX AR Application.</string>
+    <string name="finish_hint">Now it is finished. Please press a start button to run STX AR Application.</string>
     <string name="choose_object">Choose object:</string>
     <string name="skip">SKIP</string>
     <string name="start_application">Start</string>
