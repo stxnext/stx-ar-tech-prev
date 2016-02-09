@@ -13,6 +13,9 @@
     <string name="credits">Credits</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="development_team">Development</string>
+    <string name="models">Models</string>
+    <string name="dinosaur_model">Dinosaur model</string>
 
     <string name="welcome">WELCOME</string>
     <string name="marker">AR MARKER</string>

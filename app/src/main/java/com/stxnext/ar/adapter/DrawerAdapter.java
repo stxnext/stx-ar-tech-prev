@@ -2,6 +2,7 @@ package com.stxnext.ar.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,4 +29,5 @@ public class DrawerAdapter extends ArrayAdapter<DrawerMenuItems> {
 
         return convertView;
     }
+
 }

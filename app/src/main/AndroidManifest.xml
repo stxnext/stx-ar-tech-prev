@@ -43,6 +43,12 @@
         </activity>
 
         <activity
+            android:name="com.stxnext.ar.activity.CreditsActivity"
+            android:label="Credits"
+            android:theme="@style/AppTheme.Light">
+        </activity>
+
+        <activity
             android:name="com.stxnext.ar.activity.UnityPlayerNativeActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
             android:label="@string/app_name"
