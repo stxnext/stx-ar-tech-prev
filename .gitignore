@@ -73,6 +73,7 @@ crashlytics-build.properties
 # Generated files
 bin/
 !app/src/main/assets/**
+!app/libs/
 gen/
 
 # Gradle files
