@@ -125,7 +125,7 @@ gradle-app.setting
 #Unity
 /unity/Assets/.consulo
 ### Unity ###
-#/unity/[Ll]ibrary/
+/unity/[Ll]ibrary/
 /unity/[Tt]emp/
 /unity/[Oo]bj/
 /unity/[Bb]uild/
