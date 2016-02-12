@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.stxnext.ar.R;
 import com.stxnext.ar.activity.TutorialActivity;
 
@@ -84,6 +84,6 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((RelativeLayout) object);
+        container.removeView((View) object);
     }
 }
