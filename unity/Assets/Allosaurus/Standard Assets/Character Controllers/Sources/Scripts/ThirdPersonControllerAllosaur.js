@@ -380,7 +380,7 @@ function Update() {
 			if(controller.velocity.sqrMagnitude < 0.1) {
 				if (_animation.IsPlaying(ANIMATION_ATTACK)) {
 					// When attack animation is playing then let it finish (don't fade other idle animations)
-					print("Attack animation is playing");
+//					print("Attack animation is playing");
 				} else {
 					if (lastJumpTime + jumpRepeatTime > Time.time)
 						idleRnd=Random.Range (0,3);
@@ -458,8 +458,8 @@ public function jump() {
  */
 public function bite() {
 	if (_animation) {
-		print("Attack animation");
-		print("Is attack animation playing?" + _animation.IsPlaying(ANIMATION_ATTACK));
+//		print("Attack animation");
+//		print("Is attack animation playing?" + _animation.IsPlaying(ANIMATION_ATTACK));
 		if (!_animation.IsPlaying(ANIMATION_ATTACK)) {
 			_animation[ANIMATION_ATTACK].wrapMode = WrapMode.Once;
 			_animation.CrossFade(ANIMATION_ATTACK);

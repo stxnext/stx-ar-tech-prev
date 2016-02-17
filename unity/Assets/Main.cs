@@ -22,9 +22,9 @@ public class Main : MonoBehaviour {
          */
         cat.SetActive(false);
 
-//        logo.SetActive(true);
+//        logo.SetActive(false);
 //        cat.SetActive(true);
-//        dinosaur.SetActive(true);
+//        dinosaur.SetActive(false);
     }
 
 	public void activateLogo(String arg) {

@@ -12,6 +12,7 @@ function Start () {
     // If not visible then renderers
     // are not enabled. We have to check only one of child renderers
     // (every of them are switched when object becomes visible/invisible).
+    // This is needed when multiple objects are set as active and only vuforia switches between them.
     var renderers : Renderer[] = GetComponentsInChildren.<Renderer>();
     if (renderers != null && renderers.length > 0) {
         print("Object" + this.name + " childs renderers count: " + renderers.length);
