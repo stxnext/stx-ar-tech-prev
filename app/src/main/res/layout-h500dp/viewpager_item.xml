@@ -5,13 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        app:layout_marginTopPercent="20%">
-
         <LinearLayout
             android:id="@+id/main_content"
             android:layout_width="match_parent"
@@ -20,7 +13,8 @@
             android:gravity="center"
             android:orientation="vertical"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp" >
+            android:paddingRight="15dp"
+            app:layout_marginTopPercent="20%">
 
             <ImageView
                 android:id="@+id/landing_img_slide"
@@ -65,7 +59,5 @@
                 android:visibility="gone"/>
 
         </LinearLayout>
-
-    </ScrollView>
 
 </android.support.percent.PercentFrameLayout>

@@ -73,9 +73,9 @@ public class ViewPagerAdapter extends PagerAdapter {
                 }
             });
         }
-        hintView.setMovementMethod(LinkMovementMethod.getInstance());
         iconView.setImageDrawable(icon);
         titleView.setText(title);
+        hintView.setMovementMethod(LinkMovementMethod.getInstance());
         hintView.setText(Html.fromHtml(hint));
         container.addView(itemView);
 
