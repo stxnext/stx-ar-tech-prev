@@ -7,6 +7,7 @@ public class Main : MonoBehaviour {
     public GameObject logo;
     public GameObject dinosaur;
     public GameObject cat;
+    public GameObject cameraGameObject;
 
     void Start() {
         /**
@@ -25,6 +26,12 @@ public class Main : MonoBehaviour {
 //        logo.SetActive(false);
 //        cat.SetActive(true);
 //        dinosaur.SetActive(false);
+//        flipCamera("");
+    }
+
+    public void flipCamera(String arg) {
+        CameraFlip cameraFlip = cameraGameObject.GetComponent<CameraFlip>();
+        cameraFlip.enabled = true;
     }
 
 	public void activateLogo(String arg) {

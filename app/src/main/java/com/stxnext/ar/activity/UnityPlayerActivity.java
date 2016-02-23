@@ -1,16 +1,10 @@
 package com.stxnext.ar.activity;
 
-import com.stxnext.ar.R;
-import com.stxnext.ar.adapter.DrawerAdapter;
-import com.stxnext.ar.model.DrawerMenuItems;
-import com.stxnext.ar.util.Preferences;
-import com.unity3d.player.*;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +20,12 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+
+import com.stxnext.ar.R;
+import com.stxnext.ar.adapter.DrawerAdapter;
+import com.stxnext.ar.model.DrawerMenuItems;
+import com.stxnext.ar.util.Preferences;
+import com.unity3d.player.UnityPlayer;
 
 public class UnityPlayerActivity extends AppCompatActivity {
 
@@ -64,6 +64,9 @@ public class UnityPlayerActivity extends AppCompatActivity {
 		FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
 		unityContainer.addView(mUnityPlayer.getView(), 0, layoutParams);
 		mUnityPlayer.requestFocus();
+		if (isModelWithUpsideDownCameraMatrix()) {
+			mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "flipCamera", "");
+		}
 		int request = getIntent().getIntExtra(AR_OBJECT_INTENT_TAG, LOGO_REQUEST);
 		switch (request) {
 			case LOGO_REQUEST:
@@ -75,6 +78,14 @@ public class UnityPlayerActivity extends AppCompatActivity {
 			case CAT_REQUEST:
 				mUnityPlayer.UnitySendMessage(UNITY_OBJECT_NAME, "activateCat", "");
 				break;
+		}
+	}
+
+	private boolean isModelWithUpsideDownCameraMatrix() {
+		if (Build.MODEL.equals("Nexus 5X")) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 

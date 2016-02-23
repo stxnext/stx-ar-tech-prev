@@ -4,7 +4,7 @@
 private var childRenderer : Renderer;
 private var imageTargetRenderer : Renderer;
 private var animationComponent : Animation;
-private var thirdPersonController : ThirdPersonController;
+private var thirdPersonController : ThirdPersonControllerKitten;
 
 function Start () {
     // If object is visible (turn on by Vuforia in DefaultTrackableEventHandler.cs) then its childs' renderers are enabled.
@@ -21,7 +21,7 @@ function Start () {
     //}
     //animationComponent = GetComponent.<Animation>();
     //print("Animation: " + animationComponent);
-    thirdPersonController = GetComponent.<ThirdPersonController>();
+    thirdPersonController = GetComponent.<ThirdPersonControllerKitten>();
     print("Third person controller kitten: " + thirdPersonController);
 
 }
